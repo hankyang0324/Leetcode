@@ -24,7 +24,7 @@ public:
         return largest;
     }
     int check(vector<vector<int>>& grid,int r,int c){
-        if(r<0||r>=grid.size()||c<0||c>=grid[0].size())
+        if(r<0||r>=(int)grid.size()||c<0||c>=(int)grid[0].size())
             return 0;
         if(grid[r][c]==0)
             return 0;

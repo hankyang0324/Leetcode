@@ -1,3 +1,5 @@
+//https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/description/
+
 //Given an array of integers where 1 ≤ a[i] ≤ n (n = size of array), some elements appear twice and others appear once.
 
 //Find all the elements of [1, n] inclusive that do not appear in this array.
@@ -7,7 +9,7 @@
 #include <vector>
 using namespace std;
 
-class Solution {
+class Solution {//faster
 public:
     vector<int> findDisappearedNumbers(vector<int>& nums) {
         vector<int> ans;

@@ -21,3 +21,6 @@ public:
 };
 
 int main(){}
+
+//Integer Newton
+//牛顿迭代法

@@ -33,11 +33,9 @@ struct TreeNode {
 class Solution {
 public:
     bool isValidBST(TreeNode* root) {
-        if(!root) return true;
-        if(!root->left && !root->right) return true;
         vector<int> res;
         inorder(root,res);
-        for(int i=0;i<res.size()-1;i++){
+        for(int i=0;i<(int)res.size()-1;i++){
             if(res[i]>=res[i+1]) return false;
         }
         return true;

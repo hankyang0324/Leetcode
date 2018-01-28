@@ -22,3 +22,5 @@ public:
 };
 
 int main(){}
+
+//贪心算法，类似：64_Minimum_Path_Sum

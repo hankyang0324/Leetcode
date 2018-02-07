@@ -4,6 +4,14 @@
 
 //You need to find the shortest such subarray and output its length.
 
+//Example 1:
+//Input: [2, 6, 4, 8, 10, 9, 15]
+//Output: 5
+//Explanation: You need to sort [6, 4, 8, 10, 9] in ascending order to make the whole array sorted in ascending order.
+//Note:
+//Then length of the input array is in range [1, 10,000].
+//The input array may contain duplicates, so ascending order here means <=.
+
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -11,21 +19,23 @@ using namespace std;
 class Solution {
 public:
     int findUnsortedSubarray(vector<int>& nums) {
-        int size=nums.size();
-        int l=size;
-        int r=0;
-        for(int i=0;i<size-1;i++){
-            for(int j=i+1;j<size;j++){
-                if(nums[j]<nums[i]){
-                    r=max(r,j);
-                    l=min(l,i);
-                }
+        vector<int> copy=nums;
+        sort(nums.begin(),nums.end());
+        int begin=1,end=0;
+        for(int i=0;i<nums.size();i++){
+            if(copy[i]!=nums[i]){
+                begin=i;
+                break;
             }
         }
-        return r-l<0?0:r-l+1;
+        for(int i=nums.size()-1;i>=0;i--){
+            if(copy[i]!=nums[i]){
+                end=i;
+                break;
+            }
+        }
+        return end-begin+1;
     }
 };
 
 int main(){}
-
-//TIME LIMIT EXCEEDED!!!
